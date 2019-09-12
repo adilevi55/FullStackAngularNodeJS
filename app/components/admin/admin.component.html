@@ -1,0 +1,279 @@
+<section fxLayout="row wrap" fxLayout.lt-sm="column">
+
+        <!--desktop categories nav bar  -->
+        <div  id="desktopProductNavbar" fxShow fxHide.lt-sm fxFlex="100%">
+        <nav  mat-tab-nav-bar
+         backgroundColor="primary"
+         >
+            <a label="All Products" mat-tab-link (click)="getAllProductCategory()"> All Products</a>
+            <a mat-tab-link *ngFor="let category of navCategoryLinks" label="category.label"
+                (click)="getAllProductCategory(category.categoryName)">
+                {{category.label}}
+            </a>
+        </nav>
+
+        <button (click)="addProductDiv()" mat-stroked-button color="warn">
+                Add Product
+            </button>
+    
+            <mat-form-field class="prodcutNameInpotSearch" id="phoneInpotSearch">
+                <input matInput placeholder="Search Product" #desktopSearchproductInput>
+           </mat-form-field>
+           <i class="material-icons" (click)="search(desktopSearchproductInput.value)">
+                search
+            </i>
+    </div>
+
+        <!--phone categories nav bar  -->
+        <div fxHide fxShow.lt-sm id="phoneProductNavbar">
+            <mat-expansion-panel>
+
+                <mat-expansion-panel-header>
+                    <mat-panel-title>
+                        Categories
+                    </mat-panel-title>
+                </mat-expansion-panel-header>
+
+                <button fxLayoutAlign.lt-sm="center center" mat-button (click)="getAllProductCategory()"> All
+                    Products</button>
+                <button fxLayoutAlign.lt-sm="center center" mat-button *ngFor="let category of navCategoryLinks"
+                    (click)="getAllProductCategory(category.categoryName)">
+                    {{category.label}}
+                </button>
+
+            </mat-expansion-panel>
+            <button (click)="addProductDiv()" mat-stroked-button color="warn">
+                    Add Product
+                </button>
+        
+                <mat-form-field class="prodcutNameInpotSearch" fxF>
+                    <input matInput placeholder="Search Product" #phoneSearchproductInput>
+                </mat-form-field>
+                <i class="material-icons" (click)="search(phoneSearchproductInput.value)">
+                    search
+                </i>
+        </div>  
+
+    <!--desktop Update && Add Product  -->
+        <div fxShow fxHide.lt-sm  id="desktopUpdateAddProductFormDiv" fxFlex="20%">
+            <!-- desktop Update Product -->
+            <div *ngIf="productEditBoolean">
+                <h1>Update Product</h1>
+
+                <form #formInfo="ngForm" fxLayoutAlign="center center" fxLayout="row wrap" fxLayout.lt-sm="column">
+                    <mat-form-field fxFlex="100%">
+                        <input #productNameInfo="ngModel" matInput type="text" required #productNameInfo="ngModel"
+                            [(ngModel)]="productEdite.productName" name="productName" placeholder="Product Name">
+                        <mat-error *ngIf="productNameInfo.errors?.required && productNameInfo.touched">
+                            Missing Product Name</mat-error>
+                    </mat-form-field>
+                    <mat-form-field fxFlex="100%">
+                        <input matInput type="number" required #priceInfo="ngModel" [(ngModel)]="productEdite.price"
+                            name="price" placeholder="Price">
+                        <mat-error *ngIf="priceInfo.errors?.required && priceInfo.touched">
+                            Missing Price</mat-error>
+                    </mat-form-field>
+
+                    <!-- img -->
+                    <div fxFlex="100%">
+                        <button mat-raised-button color="primary" (click)="fileInput.click()">Upload Img</button>
+                        <input flow-btn type="file" hidden (change)="onFileSelected($event.target.files)" #fileInput id="img" accept=".png">
+                        <input required type="hidden" #imgInfo="ngModel" [(ngModel)]="product.img" name="img">
+                    </div>
+                    <!-- Category -->
+                    <mat-form-field fxFlex="100%">
+                        <mat-label>Category {{changSelectTarget}}</mat-label>
+                        <mat-select required #categoryInfo="ngModel" name="category" [(ngModel)]="productEdite.category"
+                            (selectionChange)="ChangingValue($event)">
+
+                            <mat-option *ngFor="let c of categories" [value]="c._id">
+                                {{c.categoryName}}
+                            </mat-option>
+                        </mat-select>
+                        <mat-error *ngIf="categoryInfo.errors?.required && categoryInfo.touched">
+                            Missing City</mat-error>
+                    </mat-form-field>
+                    <br>
+
+                    <button [disabled]="formInfo.form.invalid" mat-raised-button (click)="saveEdit()">SAVE</button>
+                </form>
+            </div>
+
+
+            <!-- desktop Add product  -->
+            <div *ngIf="productAddBoolean">
+                <h1>Add Product</h1>
+
+                <form #addProductFormInfo="ngForm" fxLayoutAlign="center center" fxLayout="row wrap"
+                    fxLayout.lt-sm="column">
+
+                    <!-- Product Name  -->
+                    <mat-form-field fxFlex="100%">
+                        <mat-label>Product Name</mat-label>
+                        <input required matInput type="text" #productNameInfo="ngModel"
+                            [(ngModel)]="product.productName" name="productName" placeholder="Product Name">
+                        <mat-error *ngIf="productNameInfo.errors?.required && productNameInfo.touched">
+                            Missing Product Name</mat-error>
+                    </mat-form-field>
+
+                    <!-- Price -->
+                    <mat-form-field fxFlex="100%">
+                        <mat-label>Price</mat-label>
+                        <input required #priceInfo="ngModel" matInput type="number" [(ngModel)]="product.price"
+                            name="price" placeholder="Price">
+                        <mat-error *ngIf="priceInfo.errors?.required && priceInfo.touched">
+                            Missing Price</mat-error>
+                    </mat-form-field>
+
+                    <!-- img -->
+                    <div fxFlex="100%">
+                        <button mat-raised-button color="primary" (click)="fileInput.click()">Upload Img</button>
+                        <input type="file" (change)="onFileSelected($event.target.files)" #fileInput hidden id="img" accept=".png">
+                        <input required type="hidden" [(ngModel)]="product.img" name="img">
+                    </div>
+
+                    <!-- Category -->
+                    <mat-form-field fxFlex="100%">
+                        <mat-label>Category</mat-label>
+                        <mat-select required #categoryInfo="ngModel" [(ngModel)]="product.category" name="category">
+                            <mat-option *ngFor="let c of categories" [value]="c._id">
+                                {{c.categoryName}}
+                            </mat-option>
+                        </mat-select>
+                        <mat-error *ngIf="categoryInfo.errors?.required && categoryInfo.touched">
+                            Missing City</mat-error>
+                    </mat-form-field>
+
+                    <button [disabled]="addProductFormInfo.form.invalid" mat-raised-button
+                        (click)="addProductForm()">Add
+                        Product</button>
+
+                </form>
+            </div>
+        </div>
+
+    <!-- phone Update && Add Product -->
+        <div fxShow.lt-sm fxHide id="phoneUpdateAddProductFormDiv" fxFlex.lt-sm="100%" >
+            <!-- phone Update Product -->
+            <mat-expansion-panel *ngIf="productEditBoolean">
+                <mat-expansion-panel-header>
+                    <mat-panel-title>
+                        Update Product
+                    </mat-panel-title>
+                </mat-expansion-panel-header>
+                <form #formInfo="ngForm" fxLayoutAlign="center center" fxLayout="row wrap" fxLayout.lt-sm="column">
+                    <mat-form-field fxFlex="100%">
+                        <input #productNameInfo="ngModel" matInput type="text" required #productNameInfo="ngModel"
+                            [(ngModel)]="productEdite.productName" name="productName" placeholder="Product Name">
+                        <mat-error *ngIf="productNameInfo.errors?.required && productNameInfo.touched">
+                            Missing Product Name</mat-error>
+                    </mat-form-field>
+                    <mat-form-field fxFlex="100%">
+                        <input matInput type="number" required #priceInfo="ngModel" [(ngModel)]="productEdite.price"
+                            name="price" placeholder="Price">
+                        <mat-error *ngIf="priceInfo.errors?.required && priceInfo.touched">
+                            Missing Price</mat-error>
+                    </mat-form-field>
+
+                    <!-- img -->
+                    <div fxFlex="100%">
+                        <button mat-raised-button color="primary" (click)="fileInput.click()">Upload Img</button>
+                        <input type="file" hidden #fileInput (change)="onFileSelected($event.target.files)" id="img" accept=".png">
+                        <input required type="hidden" #imgInfo="ngModel" [(ngModel)]="product.img" name="img">
+                    </div>
+                    <!-- Category -->
+                    <mat-form-field fxFlex="100%">
+                        <mat-label>Category {{changSelectTarget}}</mat-label>
+                        <mat-select required #categoryInfo="ngModel" name="category" [(ngModel)]="productEdite.category"
+                            (selectionChange)="ChangingValue($event)">
+
+                            <mat-option *ngFor="let c of categories" [value]="c._id">
+                                {{c.categoryName}}
+                            </mat-option>
+                        </mat-select>
+                        <mat-error *ngIf="categoryInfo.errors?.required && categoryInfo.touched">
+                            Missing City</mat-error>
+                    </mat-form-field>
+                    <br>
+
+                    <button [disabled]="formInfo.form.invalid" mat-raised-button (click)="saveEdit()">SAVE</button>
+                </form>
+            </mat-expansion-panel>
+
+            <!-- phone Add Product -->
+            <mat-expansion-panel *ngIf="productAddBoolean">
+                <mat-expansion-panel-header>
+                    <mat-panel-title>
+                        Add Product
+                    </mat-panel-title>
+                </mat-expansion-panel-header>
+                <!-- desktop Add product  -->
+
+                <form #addProductFormInfo="ngForm" fxLayoutAlign="center center" fxLayout="row wrap"
+                    fxLayout.lt-sm="column">
+
+                    <!-- Product Name  -->
+                    <mat-form-field fxFlex="100%">
+                        <mat-label>Product Name</mat-label>
+                        <input required matInput type="text" #productNameInfo="ngModel"
+                            [(ngModel)]="product.productName" name="productName" placeholder="Product Name">
+                        <mat-error *ngIf="productNameInfo.errors?.required && productNameInfo.touched">
+                            Missing Product Name</mat-error>
+                    </mat-form-field>
+
+                    <!-- Price -->
+                    <mat-form-field fxFlex="100%">
+                        <mat-label>Price</mat-label>
+                        <input required #priceInfo="ngModel" matInput type="number" [(ngModel)]="product.price"
+                            name="price" placeholder="Price">
+                        <mat-error *ngIf="priceInfo.errors?.required && priceInfo.touched">
+                            Missing Price</mat-error>
+                    </mat-form-field>
+
+                    <!-- img -->
+                    <div fxFlex="100%">
+                        <button mat-raised-button color="primary" (click)="fileInput.click()">Upload Img</button>
+                        <input type="file" hidden #fileInput (change)="onFileSelected($event.target.files)" id="img" accept=".png">
+                        <input required type="hidden" [(ngModel)]="product.img" name="img">
+                    </div>
+
+                    <!-- Category -->
+                    <mat-form-field fxFlex="100%">
+                        <mat-label>Category</mat-label>
+                        <mat-select required #categoryInfo="ngModel" [(ngModel)]="product.category" name="category">
+                            <mat-option *ngFor="let c of categories" [value]="c._id">
+                                {{c.categoryName}}
+                            </mat-option>
+                        </mat-select>
+                        <mat-error *ngIf="categoryInfo.errors?.required && categoryInfo.touched">
+                            Missing City</mat-error>
+                    </mat-form-field>
+
+                    <button [disabled]="addProductFormInfo.form.invalid" mat-raised-button
+                        (click)="addProductForm()">Add
+                        Product</button>
+
+                </form>
+            </mat-expansion-panel>
+
+
+        </div>
+
+    <div fxFlex="80%">
+        <div fxLayoutGap="3%" fxLayout="row wrap" fxLayout.lt-sm="column" class="allProducts" *ngIf="products">
+            <mat-card fxFlex="0 1 calc(33.3% - 32px)" fxFlex.lg="0 1 calc(33.3% - 42px)"
+                fxFlex.xl="0 1 calc(33.3% - 42px)" fxFlex.lt-sm="100%" *ngFor="let p of products" class="card">
+                <mat-card-title>{{p.productName}}</mat-card-title>
+                <img type="file" width="80%" height="150px" src="../../../assets/images/{{p.img}}.png">
+                <mat-card-content>
+                    <p>price: {{p.price  | currency}}</p>
+
+                </mat-card-content>
+                <mat-card-actions>
+                    <button mat-raised-button
+                        (click)="edit(p._id,p.productName,p.img,p.price,p.category._id,p.category.categoryName)">Edite</button>
+                </mat-card-actions>
+            </mat-card>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,124 @@
+<section fxLayoutAlign="center" fxLayout="row" fxLayout.lt-sm="column" fxLayoutGap="10%">
+    <div class="cart" fxFlex="25%" fxFlex.lt-sm="100%">
+        <a mat-raised-button routerLink="/shopping-page/all-products">Back to shop</a>
+
+        <div fxShow fxHide.lt-sm>
+            <br>
+            <h1>MyCart</h1>
+            <br>
+            <div *ngIf="cartItem" fxLayout="row wrap" fxLayoutAlign="center" class="cardDiv">
+                <mat-card fxFlex="70%" *ngFor="let i of cartItem" class="card">
+
+                    <mat-card-title>
+                        <p>{{i.product.productName}}</p>
+                    </mat-card-title>
+                    <img src="../../../assets/images/{{i.product.img}}.png" width="70px">
+                    <mat-card-content>
+                        <p>Quantity: {{ i.quantity }} </p>
+                        <p>Price: {{ i.generalPrice | currency}}</p>
+                    </mat-card-content>
+                    <mat-card-actions>
+                    </mat-card-actions>
+                </mat-card>
+
+            </div>
+            <p>Total Price: {{ totalCartPrice | currency}}</p>
+
+        </div>
+        <!-- phone -->
+        <div fxHide fxShow.lt-sm>
+            <mat-accordion>
+                <mat-expansion-panel id="phoneMatPanelHeader">
+                    <mat-expansion-panel-header>
+                        <p>My Cart
+                            <mat-icon attr.data-badge="{{cartItemLength}}" matBadge="{{cartItemLength}}"
+                                matBadgeColor="accent">shopping_cart
+                            </mat-icon>
+                        </p>
+                    </mat-expansion-panel-header>
+                    <div *ngIf="cartItem" fxLayout="row wrap" fxLayoutAlign="center" class="cardDiv">
+                        <mat-card fxFlex="70%" *ngFor="let i of cartItem" class="card">
+
+                            <mat-card-title>
+                                <p>{{i.product.productName}}</p>
+                            </mat-card-title>
+                            <img src="../../../assets/images/{{i.product.img}}.png" width="70px">
+                            <mat-card-content>
+                                <p>Quantity: {{ i.quantity }} </p>
+                                <p>Price: {{ i.generalPrice | currency}}</p>
+                            </mat-card-content>
+                            <mat-card-actions>
+                            </mat-card-actions>
+                        </mat-card>
+
+                    </div>
+                    <p>Total Price: {{ totalCartPrice | currency}}</p>
+                </mat-expansion-panel>
+            </mat-accordion>
+        </div>
+    </div>
+
+    <div class="order" fxFlex="75%" fxFlex.lt-sm="100%">
+        <h1>order</h1>
+        <hr>
+        <br>
+        <h1>shiping details</h1>
+        <hr>
+        <br>
+        <form #formInfo="ngForm" class="container">
+                <!-- City -->
+            <mat-form-field>
+                <mat-label>City {{ order.cityToShip}}</mat-label>
+                <mat-select required #cityToShipInfo="ngModel" name="cityToShip" [(ngModel)]="order.cityToShip"
+                    (selectionChange)="ChangingCityValue($event)">
+                    <mat-option *ngFor="let c of cities" value="c.Name">
+                        {{c.Name}}
+                    </mat-option>
+                </mat-select>
+                <mat-error *ngIf="cityToShipInfo.errors?.required && cityToShipInfo.touched">
+                    Missing City</mat-error>
+            </mat-form-field>
+            <br>
+
+            <!-- Street -->
+            <mat-form-field class="example-full-width">
+                <input matInput type="text" required #streetToShipInfo="ngModel" [(ngModel)]="order.streetToShip"
+                    name="streetToShip" placeholder="Street">
+                <mat-error *ngIf="streetToShipInfo.errors?.required && streetToShipInfo.touched">
+                    Missing Street</mat-error>
+            </mat-form-field>
+            <br>
+            <!-- shipping Date -->
+            <mat-form-field hintLabel="We make shipments from 1-10  business days">
+                <input matInput [matDatepicker]="picker" [matDatepickerFilter]="myFilter"
+                    placeholder="please select Shipping date " required #dateToShipInfo="ngModel"
+                    [(ngModel)]="order.dateToShip" name="dateToShip">
+                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+                <mat-error *ngIf="dateToShipInfo.errors?.required && dateToShipInfo.touched">
+                    Missing Shipping Date</mat-error>
+            </mat-form-field>
+
+            <h1>Payments:</h1>
+            <hr>
+            <br>
+            <!-- Credit Card -->
+            <mat-form-field class="example-full-width">
+                <input matInput type="text" required #creditCardNumberInfo="ngModel"
+                    [(ngModel)]="order.creditCardNumber" name="creditCardNumber" placeholder="Credit Card"
+                    maxlength="16" pattern="^((4\d{3})|(5[1-5]\d{2})|(6011))-?\d{4}-?\d{4}-?\d{4}|3[4,7]\d{13}$">
+                <mat-error *ngIf="creditCardNumberInfo.errors?.required && creditCardNumberInfo.touched">
+                    Missing Credit Card</mat-error>
+                <mat-error *ngIf="creditCardNumberInfo.errors?.pattern && creditCardNumberInfo.touched">
+                    Credit card Visa (length 16, prefix 4),
+                    Mastercard (length 16, prefix 51-55),
+                    Discover (length 16, prefix 6011),
+                    American Express (length 15, prefix 34 or 37).
+                    All 16 digit formats accept optional hyphens (-) between each group of four digits </mat-error>
+            </mat-form-field>
+            <br>
+            <button mat-raised-button color="primary" [disabled]="formInfo.form.invalid"
+                (click)="orderShoppingCart()">Order</button>
+        </form>
+    </div>
+</section>

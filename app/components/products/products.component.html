@@ -1,0 +1,41 @@
+<div id="ProductPageNavbar">
+    <div fxHide.lt-sm>
+        <nav mat-tab-nav-bar backgroundColor="primary">
+            <a mat-tab-link *ngFor="let link of navLinks" [routerLink]="link.path" routerLinkActive
+                #rla="routerLinkActive" [active]="rla.isActive">
+                {{link.label}}
+            </a>
+        </nav>
+        <div class="SearchProdcutNameDiv">
+            <mat-form-field class="prodcutNameInpotSearch">
+                <input type="text" color="primary" matInput placeholder="Search Product" #searchproductInput>
+            </mat-form-field>
+            <i class="material-icons" (click)="search(searchproductInput.value)">
+                search
+            </i>
+        </div>
+    </div>  
+    <!-- pohne -->
+    <div fxHide fxShow.lt-sm>
+        <mat-expansion-panel>
+
+            <mat-expansion-panel-header>
+                <mat-panel-title>
+                    Categories
+                </mat-panel-title>
+            </mat-expansion-panel-header>
+            <button fxLayoutAlign.lt-sm="center center" mat-button *ngFor="let link of navLinks"
+                [routerLink]="link.path"> {{link.label}}</button>
+        </mat-expansion-panel>
+        <div>
+            <mat-form-field>
+                <input matInput placeholder="Search Product" #searchproductInput>
+            </mat-form-field>
+            <i class="material-icons" (click)="search(searchproductInput.value)">
+                search
+            </i>
+        </div>
+    </div>
+
+</div>
+<router-outlet></router-outlet>

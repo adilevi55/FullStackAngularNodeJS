@@ -1,0 +1,22 @@
+<mat-dialog-content>
+    <h1 mat-dialog-title>{{productName}} </h1>
+    <img width="100" src="../../../assets/images/{{img}}.png">
+    <p>Price: {{ price | currency}}</p>
+    <form #formInfo="ngForm">
+        <mat-form-field>
+            <input matInput type="number" required #quantityInfo="ngModel" [(ngModel)]="quantity" name="quantity"
+                placeholder="Quantity" pattern="(\b([1-9]|10)\b)" min="1">
+            <mat-error *ngIf="quantityInfo.errors?.required && quantityInfo.touched">
+                Missing Quantity</mat-error>
+            <mat-error *ngIf="quantityInfo.errors?.pattern && quantityInfo.touched">
+                Quantity Must be 1-10  
+            </mat-error>
+        </mat-form-field>
+        <mat-dialog-actions fxLayoutAlign="center">
+            <button (click)="cancel()" mat-button>Cancel</button>
+            <button [disabled]="formInfo.form.invalid" (click)="save()" mat-button>Save</button>
+        </mat-dialog-actions>
+    </form>
+   
+ </mat-dialog-content>
+

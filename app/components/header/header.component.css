@@ -1,0 +1,12 @@
+
+  img {
+    padding: 0 14px;
+  }
+  
+  button{
+      max-width: 100px;
+    flex: 1 1 
+  }
+  span{
+    flex: 1 1 auto;
+  }

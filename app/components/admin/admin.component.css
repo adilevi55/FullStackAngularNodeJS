@@ -1,0 +1,49 @@
+.card{
+    text-align: center;
+    margin-bottom: 10px;
+}
+.stickyPhoneProductPageNavbar {
+    z-index: 2;
+    position: fixed;
+    width: 100%;
+    top: 110px;
+
+}
+.stickyDesktopProductPageNavbar {
+    z-index: 2;
+    position: fixed;
+    width: 100%;
+    top: 67px;
+
+}
+
+.stickyPhoneUpdateAddProductFormDiv {
+    z-index: 2;
+    position: fixed;
+    top: 63px;
+    width: 100%;
+
+}
+
+.stickyDesktopUpdateAddProductFormDiv {
+    z-index: 2;
+    position: fixed;
+    top: 160px;
+    width: 100%;
+    right: 20px;
+}
+mat-expansion-panel button{
+    margin: auto;
+}
+
+h1{
+    text-align:center;
+}
+mat-card{
+    text-align:center;
+}
+.allProducts{
+margin-left: 10px;
+margin-top: 10px;
+}
+

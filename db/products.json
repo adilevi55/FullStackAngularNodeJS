@@ -1,0 +1,48 @@
+{"_id":{"$oid":"5cc8021fdbd90700d8eb5ac2"},"productName":"orange","category":{"$oid":"5cb4885308782b5b7c272b74"},"price":10,"img":"orange","__v":0}
+{"_id":{"$oid":"5cc80243dbd90700d8eb5ac3"},"productName":"Apple","category":{"$oid":"5cb4885308782b5b7c272b74"},"price":4,"img":"Apple","__v":0}
+{"_id":{"$oid":"5cc9e4d41dc2855940edc713"},"productName":"Egg","category":{"$oid":"5cc9e4894313d94f6c44cd85"},"price":6,"img":"Eggs","__v":0}
+{"_id":{"$oid":"5ccb4f6d6e68484ec05890b1"},"productName":"Broccoli","category":{"$oid":"5cb4885308782b5b7c272b74"},"price":12,"img":"broccoli","__v":0}
+{"_id":{"$oid":"5ccb4f816e68484ec05890b2"},"productName":"Carrot","category":{"$oid":"5cb4885308782b5b7c272b74"},"price":15,"img":"carrot","__v":0}
+{"_id":{"$oid":"5ccb4f8c6e68484ec05890b3"},"productName":"Cucumber","category":{"$oid":"5cb4885308782b5b7c272b74"},"price":15,"img":"cucumber","__v":0}
+{"_id":{"$oid":"5ccb4fa36e68484ec05890b4"},"productName":"Garden Vegetavble Soup","category":{"$oid":"5cb4885308782b5b7c272b74"},"price":36,"img":"gardenVegetavbleSoup","__v":0}
+{"_id":{"$oid":"5ccb4fb66e68484ec05890b5"},"productName":"Tomato","category":{"$oid":"5cb4885308782b5b7c272b74"},"price":27,"img":"tomato","__v":0}
+{"_id":{"$oid":"5ccb503c6e68484ec05890b7"},"productName":"Tnova Mile 3%","category":{"$oid":"5cc9e4894313d94f6c44cd85"},"price":14,"img":"tnovaMile3Present","__v":0}
+{"_id":{"$oid":"5ccb50466e68484ec05890b8"},"productName":"Yotvata Extra Pro","category":{"$oid":"5cc9e4894313d94f6c44cd85"},"price":24,"img":"yotvataExtraPro","__v":0}
+{"_id":{"$oid":"5ccb504a6e68484ec05890b9"},"productName":"Yotvata Extra Pro Choco","category":{"$oid":"5cc9e4894313d94f6c44cd85"},"price":24,"img":"yotvataExtraProChoco","__v":0}
+{"_id":{"$oid":"5ccc06430da0951a3008707c"},"productName":"Beef Rib Steak Boneless","category":{"$oid":"5ccbf9584313d94f6c44cd87"},"price":124,"img":"BeefRibSteakBoneless","__v":0}
+{"_id":{"$oid":"5ccc065b0da0951a3008707d"},"productName":"Beef Steak Burger","category":{"$oid":"5ccbf9584313d94f6c44cd87"},"price":70,"img":"beefSteakBurger","__v":0}
+{"_id":{"$oid":"5ccc066e0da0951a3008707e"},"productName":"Boneless Chicken Breasts","category":{"$oid":"5ccbf9584313d94f6c44cd87"},"price":30,"img":"bonelessChickenBreasts","__v":0}
+{"_id":{"$oid":"5ccc067e0da0951a3008707f"},"productName":"Fish Sandwich Fillets","category":{"$oid":"5ccbf9584313d94f6c44cd87"},"price":37,"img":"FishSandwichFillets","__v":0}
+{"_id":{"$oid":"5ccc068e0da0951a30087080"},"productName":"Lean Beef Salami","category":{"$oid":"5ccbf9584313d94f6c44cd87"},"price":16,"img":"leanBeefSalami","__v":0}
+{"_id":{"$oid":"5ccc069a0da0951a30087081"},"productName":"Natures Menu Raw Chicken Wings","category":{"$oid":"5ccbf9584313d94f6c44cd87"},"price":19,"img":"naturesMenuRawChickenWings","__v":0}
+{"_id":{"$oid":"5ccc06d30da0951a30087082"},"productName":"Tequila Lime","category":{"$oid":"5ccbf9584313d94f6c44cd87"},"price":20,"img":"tequilaLime","__v":0}
+{"_id":{"$oid":"5ccc06e60da0951a30087083"},"productName":"No Name 2 Salmon Fillets","category":{"$oid":"5ccbf9584313d94f6c44cd87"},"price":60,"img":"noName2SalmonFillets","__v":0}
+{"_id":{"$oid":"5ccc06f80da0951a30087084"},"productName":"2 Mediterranean Fish Fillets TomatoBasil","category":{"$oid":"5ccbf9584313d94f6c44cd87"},"price":70,"img":"2MediterraneanFishFilletsTomatoBasil","__v":0}
+{"_id":{"$oid":"5ccc07070da0951a30087085"},"productName":"4 Large Cod Fillets","category":{"$oid":"5ccbf9584313d94f6c44cd87"},"price":48,"img":"4LargeCodFillets","__v":0}
+{"_id":{"$oid":"5ccc07140da0951a30087086"},"productName":"Atlantic Salmon","category":{"$oid":"5ccbf9584313d94f6c44cd87"},"price":100,"img":"atlanticSalmon","__v":0}
+{"_id":{"$oid":"5ccc072d0da0951a30087087"},"productName":"Beef Bologna","category":{"$oid":"5ccbf9584313d94f6c44cd87"},"price":13,"img":"beefBologna","__v":0}
+{"_id":{"$oid":"5ccc07490da0951a30087088"},"productName":"Bourgogne Aligoté White Wine","category":{"$oid":"5ccbf9694313d94f6c44cd88"},"price":50,"img":"bourgogneAligotéWhiteWine","__v":0}
+{"_id":{"$oid":"5ccc07560da0951a30087089"},"productName":"Carlsberg Green Lager 330ml 24 Case","category":{"$oid":"5ccbf9694313d94f6c44cd88"},"price":180,"img":"carlsbergGreenLager330ml24Case","__v":0}
+{"_id":{"$oid":"5ccc07780da0951a3008708a"},"productName":"Chang Beer 6 Bottle 330mL","category":{"$oid":"5ccbf9694313d94f6c44cd88"},"price":60,"img":"changBeer6Bottle330mL","__v":0}
+{"_id":{"$oid":"5ccc07840da0951a3008708b"},"productName":"Chang Beer 330ml 24 Case","category":{"$oid":"5ccbf9694313d94f6c44cd88"},"price":160,"img":"changBeer330ml24Case","__v":0}
+{"_id":{"$oid":"5ccc07a90da0951a3008708c"},"productName":"Chang Beer Bottle 330mL","category":{"$oid":"5ccbf9694313d94f6c44cd88"},"price":10,"img":"changBeerBottle330mL","__v":0}
+{"_id":{"$oid":"5ccc07b70da0951a3008708d"},"productName":"Chang Beer CAN","category":{"$oid":"5ccbf9694313d94f6c44cd88"},"price":9,"img":"changBeerCAN","__v":0}
+{"_id":{"$oid":"5ccc07c60da0951a3008708e"},"productName":"Church Road Red Wine","category":{"$oid":"5ccbf9694313d94f6c44cd88"},"price":59,"img":"churchRoadRedWine","__v":0}
+{"_id":{"$oid":"5ccc07dd0da0951a3008708f"},"productName":"Heineken Bottle 330mL","category":{"$oid":"5ccbf9694313d94f6c44cd88"},"price":14,"img":"heinekenBottle330mL","__v":0}
+{"_id":{"$oid":"5ccc07e70da0951a30087090"},"productName":"Robert Mondavi Winery Merlot Napa Valley Red Wine","category":{"$oid":"5ccbf9694313d94f6c44cd88"},"price":114,"img":"robertMondaviWineryMerlotNapaValleyRedWine","__v":0}
+{"_id":{"$oid":"5ccc07f10da0951a30087091"},"productName":"Schioppettino Italian Red Wine","category":{"$oid":"5ccbf9694313d94f6c44cd88"},"price":117,"img":"schioppettinoItalianRedWine","__v":0}
+{"_id":{"$oid":"5ccc07fe0da0951a30087092"},"productName":"Singaha Beer Bottle 330mL","category":{"$oid":"5ccbf9694313d94f6c44cd88"},"price":12,"img":"singahaBeerBottle330mL","__v":0}
+{"_id":{"$oid":"5ccc080e0da0951a30087093"},"productName":"Smirnoff Red Label Vodka","category":{"$oid":"5ccbf9694313d94f6c44cd88"},"price":52,"img":"smirnoffRedLabelVodka","__v":0}
+{"_id":{"$oid":"5ccc08170da0951a30087094"},"productName":"Van Gogh Vodka Blue","category":{"$oid":"5ccbf9694313d94f6c44cd88"},"price":82,"img":"vanGoghVodkaBlue","__v":0}
+{"_id":{"$oid":"5ccc08210da0951a30087095"},"productName":"van Gogh Vodka Caramel","category":{"$oid":"5ccbf9694313d94f6c44cd88"},"price":122,"img":"vanGoghVodkaCaramel","__v":0}
+{"_id":{"$oid":"5ccc08290da0951a30087096"},"productName":"Van Gogh Vodka Classic","category":{"$oid":"5ccbf9694313d94f6c44cd88"},"price":122,"img":"vanGoghVodkaClassic","__v":0}
+{"_id":{"$oid":"5ccc08310da0951a30087097"},"productName":"Van Gogh Vodka Double Espresso","category":{"$oid":"5ccbf9694313d94f6c44cd88"},"price":122,"img":"vanGoghVodkaDoubleEspresso","__v":0}
+{"_id":{"$oid":"5ccc08360da0951a30087098"},"productName":"Van Gogh Vodka Pineapple","category":{"$oid":"5ccbf9694313d94f6c44cd88"},"price":122,"img":"vanGoghVodkaPineapple","__v":0}
+{"_id":{"$oid":"5ccc083c0da0951a30087099"},"productName":"Van Gogh Vodka Pomegranate","category":{"$oid":"5ccbf9694313d94f6c44cd88"},"price":122,"img":"vanGoghVodkaPomegranate","__v":0}
+{"_id":{"$oid":"5ccc084c0da0951a3008709a"},"productName":"Vodka Grey Goose","category":{"$oid":"5ccbf9694313d94f6c44cd88"},"price":138,"img":"vodkaGreyGoose","__v":0}
+{"_id":{"$oid":"5ccc08520da0951a3008709b"},"productName":"Vodka Grey Goose Cherry Noir","category":{"$oid":"5ccbf9694313d94f6c44cd88"},"price":138,"img":"vodkaGreyGooseCherryNoir","__v":0}
+{"_id":{"$oid":"5ccc08680da0951a3008709c"},"productName":"Coca Cola 1Ltr","category":{"$oid":"5ccbf9764313d94f6c44cd89"},"price":7,"img":"cocaCola1Ltr","__v":0}
+{"_id":{"$oid":"5ccc08700da0951a3008709d"},"productName":"Coca Cola Cans 330mL","category":{"$oid":"5ccbf9764313d94f6c44cd89"},"price":5,"img":"cocaColaCans330mL","__v":0}
+{"_id":{"$oid":"5ccc08750da0951a3008709e"},"productName":"Coca Cola Zero CAN","category":{"$oid":"5ccbf9764313d94f6c44cd89"},"price":5,"img":"cocaColaZeroCAN","__v":0}
+{"_id":{"$oid":"5ccc087a0da0951a3008709f"},"productName":"Diet Pepsi Cola CAN","category":{"$oid":"5ccbf9694313d94f6c44cd88"},"price":6,"img":"dietPepsiColaCAN","__v":0}
+{"_id":{"$oid":"5ccc08820da0951a300870a0"},"productName":"Pepsi Cola 1Ltr","category":{"$oid":"5ccbf9764313d94f6c44cd89"},"price":15,"img":"pepsiCola1Ltr","__v":0}

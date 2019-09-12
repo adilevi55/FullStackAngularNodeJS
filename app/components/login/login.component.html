@@ -1,0 +1,40 @@
+<div *ngIf="costomer2" class="startShopping" fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="10px">
+    <button *ngIf="!cheackShoppingCart" mat-stroked-button color="primary" (click)="startShopping()"
+        class="startShoppingLink">Start Shopping</button>
+    <!--  Resume shopping -->
+    <button *ngIf="cheackShoppingCart" mat-stroked-button class="startShoppingLink" color="primary"
+        (click)="resumeShopping()">Resume shopping</button>
+</div>
+<p *ngIf="!costomer2">Registered?
+    <a mat-stroked-button color="primary" link routerLink="/register">
+        Sing up</a>
+</p>
+
+<br>
+<form *ngIf="!costomer2" fxLayout="column" fxLayoutAlign="center center" class="example-form" #formInfo="ngForm">
+
+    <!-- user name -->
+    <mat-form-field class="example-full-width">
+        <input matInput type="text" required #userNameInfo="ngModel" [(ngModel)]="costomer.userName" name="userName"
+            placeholder="User Name">
+        <mat-error *ngIf="userNameInfo.errors?.required && userNameInfo.touched">
+            Missing User Name</mat-error>
+    </mat-form-field>
+    <!-- pattern="^(?=.*[0-9]+.*)(?=.*[a-zA-Z]+.*)[0-9a-zA-Z]{6,}$" -->
+
+    <!-- password -->
+    <mat-form-field class="example-full-width">
+        <input matInput type="password" required #passwordInfo="ngModel" [(ngModel)]="costomer.password" name="password"
+            placeholder="Password">
+
+        <mat-error *ngIf="passwordInfo.errors?.required && passwordInfo.touched">
+            Missing Password</mat-error>
+        <mat-error *ngIf="passwordInfo.errors?.pattern && passwordInfo.touched">
+            Password must contain at least one letter,
+            at least one number, and be longer than six charaters.</mat-error>
+    </mat-form-field>
+
+    <button mat-raised-button color="primary" [disabled]="formInfo.form.invalid" (click)="logIn()">
+        LogIn
+    </button>
+</form>

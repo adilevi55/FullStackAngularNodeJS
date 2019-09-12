@@ -1,0 +1,73 @@
+<!-- phone cart -->
+<mat-accordion fxHide fxShow.lt-sm class="cartPhone" id="cartPhonePageNav">
+    <mat-expansion-panel id="phoneMatPanelHeader">
+        <mat-expansion-panel-header>
+            <mat-panel-title>
+                <p>My Cart
+                    <mat-icon attr.data-badge="{{cartItemLength}}" matBadge="{{cartItemLength}}" matBadgeColor="accent">
+                        shopping_cart
+                    </mat-icon>
+                </p>
+            </mat-panel-title>
+
+        </mat-expansion-panel-header>
+        <div class="cartTitelDiv">
+
+            <button *ngIf="cartItemLength > 0" class="deleteAllCartItemButton" mat-stroked-button color="warn"
+                (click)="deleteAllCartItem()">Delete All Cart Items</button>
+        </div>
+
+        <div class="cartDivPhoneShow" *ngIf="cartItemLength > 0">
+
+            <mat-card *ngFor="let i of cartItem" class="card">
+                <mat-card-header class="phoneCardHeader">
+                    <mat-card-title>{{i.product.productName}}</mat-card-title>
+                    <i (click)="deleteCartItem(i._id)" class="material-icons md-36">
+                        close</i>
+                </mat-card-header>
+                <mat-card-content>
+                    <img width="120" height="100" src="../../../assets/images/{{i.product.img}}.png">
+                    <p>price: {{i.product.price | currency}}</p>
+                    <p>quantity: {{i.quantity}}</p>
+                </mat-card-content>
+            </mat-card>
+        </div>
+        <div class="totalPriceAndOrderButton">
+            <h1 class="totalPricePhoneH1">Total Price: {{totalCartPrice | currency}}</h1>
+            <button class="orderButtonPhone" *ngIf="cartItemLength > 0" mat-fab color="warn" routerLink="/order">Order<i
+                    class="material-icons md-36">
+                    shopping_cart</i></button>
+        </div>
+    </mat-expansion-panel>
+</mat-accordion>
+
+<!-- desktop -->
+<div fxHide.lt-sm>
+    <div class="cartTitelDiv">
+
+        <h1>MyCart</h1>
+        <button [disabled]="cartItemLength == 0" class="deleteAllCartItemButton" mat-stroked-button color="warn"
+            (click)="deleteAllCartItem()">Delete All Cart Items</button>
+    </div>
+
+    <div class="cartDiv" *ngIf="cartItemLength > 0">
+
+        <mat-card *ngFor="let i of cartItem" class="card">
+            <mat-card-header>
+                <mat-card-title>{{i.product.productName}}</mat-card-title>
+                <i (click)="deleteCartItem(i._id)" class="material-icons md-36">
+                    close</i>
+            </mat-card-header>
+            <mat-card-content>
+                <img width="120" height="120" src="../../../assets/images/{{i.product.img}}.png">
+                <p>price: {{i.product.price | currency}}</p>
+                <p>quantity: {{i.quantity}}</p>
+            </mat-card-content>
+        </mat-card>
+    </div>
+    <h1>Total Price: {{totalCartPrice | currency}}</h1>
+
+
+    <button *ngIf="cartItemLength > 0" mat-fab color="warn" routerLink="/order">Order<i class="material-icons md-36">
+            shopping_cart</i></button>
+</div>

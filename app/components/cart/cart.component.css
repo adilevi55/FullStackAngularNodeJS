@@ -1,0 +1,32 @@
+.sticky {
+    z-index: 2;
+    position: fixed;
+    top: 165px;
+    width: 100%;
+  
+}
+.cartDivPhoneShow{
+    overflow: auto;
+    max-height: 150px;
+}
+.cartDiv{
+    overflow: auto;
+    max-height: 500px;
+}
+
+
+.totalPricePhoneH1{
+display: inline;
+}
+.orderButtonPhone{
+    display: inline;
+}
+#phoneMatPanelHeader{
+    padding-top: 5px;
+}
+.card{
+    text-align: center
+}
+.phoneCardHeader{
+justify-content: center;
+}

@@ -1,0 +1,12 @@
+<mat-toolbar color="primary" class="animated fadeInDown" id="navbar">
+    <span *ngIf="costomer; else helloguest">Hello {{costomer.userName}}</span>
+    <ng-template #helloguest>
+        <span *ngIf="manager; else helloAdmin"> Hello Admin</span>
+        <ng-template #helloAdmin>
+                <span>Hello guest</span>
+            </ng-template>
+    </ng-template>
+    <button mat-stroked-button color="warn" *ngIf="userName" (click)="logOut()">LogOut</button>
+    <img *ngIf="!manager" routerLink="/home" src="../../../assets/images/logo.png" width="80" height="50">
+
+</mat-toolbar>

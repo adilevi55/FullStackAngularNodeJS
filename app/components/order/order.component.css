@@ -1,0 +1,20 @@
+
+p{
+    text-align: center;
+    font-weight: bold;
+}
+#phoneMatPanelHeader{
+    padding-top: 5px;
+}
+.card{
+    max-width: 200px;
+    margin-bottom: 10px;
+}
+mat-card {
+    text-align: center;
+
+}
+.cardDiv{
+    overflow: auto;
+    max-height: 400px;
+}

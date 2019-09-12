@@ -1,0 +1,5 @@
+{"_id":{"$oid":"5cb4885308782b5b7c272b74"},"categoryName":"frot"}
+{"_id":{"$oid":"5cc9e4894313d94f6c44cd85"},"categoryName":"Milk\u0026Eggs"}
+{"_id":{"$oid":"5ccbf9584313d94f6c44cd87"},"categoryName":"meat\u0026Fish"}
+{"_id":{"$oid":"5ccbf9694313d94f6c44cd88"},"categoryName":"alcoholicDrinks"}
+{"_id":{"$oid":"5ccbf9764313d94f6c44cd89"},"categoryName":"softDrinks"}

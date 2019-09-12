@@ -1,0 +1,14 @@
+<p>Available products in our store - {{productsNumber}} </p>
+<p>{{ordersNumber}} of orders submitted in our store </p>
+
+<div *ngIf="costomer; else newCostomer">
+    <p>Notification:</p>
+    <p *ngIf="!shoppingCartLocalStorage">your last purchase was on {{ lastOrderdate | date: 'dd/MM/yyyy'}}</p>
+    <p *ngIf="shoppingCartLocalStorage">you have open cart from {{openCartDate | date: 'dd/MM/yyyy'}}
+        cart price {{ shoppingCartPrice | currency}}
+    </p>
+</div>
+
+<ng-template #newCostomer>
+    <p>welcome new costomer</p>
+</ng-template>
